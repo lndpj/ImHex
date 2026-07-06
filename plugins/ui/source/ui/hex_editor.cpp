@@ -868,7 +868,7 @@ namespace hex::ui {
                                 if (isCurrRegionValid(byteAddress))
                                     this->drawCell(byteAddress, &bytes[x * bytesPerCell], bytesPerCell, cellHovered, CellType::Hex);
                                 else
-                                    ImGuiExt::TextFormatted("{:{}>{}}", "", m_unknownDataCharacter, maxCharsPerCell);
+                                    ImGuiExt::TextFormatted(fmt::format("{{:{}>{{}}}}", m_unknownDataCharacter), "", maxCharsPerCell);
 
                                 if (cellHovered) {
                                     Region newHoveredCell = { .address=byteAddress, .size=bytesPerCell };
