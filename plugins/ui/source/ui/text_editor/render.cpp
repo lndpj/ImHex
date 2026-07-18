@@ -307,7 +307,6 @@ namespace hex::ui {
 
         ImGui::PushStyleColor(ImGuiCol_ScrollbarBg, ImGui::ColorConvertFloat4ToU32(scrollBg));
         ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 0));
-        ImGui::PushStyleVar(ImGuiStyleVar_ScrollbarRounding, 0);
         ImGui::PushStyleVar(ImGuiStyleVar_ScrollbarSize, scrollBarSize);
 
         m_lines.m_lineNumbersStartPos = ImGui::GetCursorScreenPos();
@@ -365,7 +364,7 @@ namespace hex::ui {
         if (!m_lines.m_ignoreImGuiChild)
             ImGui::EndChild();
 
-        ImGui::PopStyleVar(3);
+        ImGui::PopStyleVar(2);
         ImGui::PopStyleColor();
 
         ImGui::SetCursorScreenPos(ImVec2(m_lines.m_lineNumbersStartPos.x, m_lines.m_lineNumbersStartPos.y + size.y - 1));
